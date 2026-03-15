@@ -43,7 +43,7 @@ export default function LeadForm() {
       <label className="f-label">Full Name *</label>
       <input className="f-input" placeholder="Your Full Name" value={form.name} onChange={set('name')} />
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+      <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
         <div>
           <label className="f-label">Email Address *</label>
           <input className="f-input" style={{ marginBottom: 0 }} type="email" placeholder="email@domain.com" value={form.email} onChange={set('email')} />

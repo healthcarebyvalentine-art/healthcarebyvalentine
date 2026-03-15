@@ -66,10 +66,11 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* MOBILE TOGGLE */}
+        {/* MOBILE TOGGLE — hidden on desktop, shown on mobile via CSS */}
         <button
           onClick={() => setMobOpen(!mobOpen)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#D4AF37', fontSize: 22, lineHeight: 1 }}
+          className="show-mob"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#D4AF37', fontSize: 26, lineHeight: 1, display: 'none' }}
           aria-label="Menu"
         >
           {mobOpen ? '✕' : '☰'}

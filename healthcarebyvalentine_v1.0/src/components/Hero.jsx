@@ -31,7 +31,7 @@ export default function Hero() {
       <div style={{ position: 'absolute', top: '35%', left: '40%', width: 900, height: 900, borderRadius: '50%', background: 'radial-gradient(circle,rgba(212,175,55,0.055) 0%,transparent 65%)', transform: 'translate(-50%,-50%)', pointerEvents: 'none' }} />
       <div style={{ position: 'absolute', top: 0, right: 0, width: 400, height: 400, background: 'radial-gradient(circle at top right,rgba(212,175,55,0.04),transparent 70%)', pointerEvents: 'none' }} />
 
-      <div className="container" style={{ padding: '40px clamp(20px,4vw,64px)', width: '100%', display: 'grid', gridTemplateColumns: '1fr 440px', gap: 'clamp(40px,5vw,100px)', alignItems: 'center' }}>
+      <div className="container hero-grid-wrap" style={{ padding: '40px clamp(20px,4vw,64px)', width: '100%', display: 'grid', gridTemplateColumns: '1fr 440px', gap: 'clamp(40px,5vw,100px)', alignItems: 'center' }}>
 
         {/* LEFT */}
         <div>
@@ -51,7 +51,7 @@ export default function Hero() {
             I'm Rev. Valentine Saint Martin — Solo Fiduciary, FBI Fingerprinted, NY Licensed. I personally conduct every forensic audit, recover every denied claim, and build every wealth structure. No junior agents. No delegation. Just 20 years of mastery applied directly to your situation.
           </p>
 
-          <div className="fade-up-3" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 56 }}>
+          <div className="fade-up-3 cta-row" style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 56 }}>
             <button className="btn-primary" onClick={() => scrollTo('contact')}>⚖ CLAIM MY FREE FORENSIC AUDIT</button>
             <button className="btn-ghost" onClick={() => scrollTo('about')}>LEARN MORE →</button>
           </div>
