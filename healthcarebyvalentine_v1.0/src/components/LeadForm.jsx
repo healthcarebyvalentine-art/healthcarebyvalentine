@@ -13,6 +13,7 @@ const PRODUCTS = [
 
 export default function LeadForm() {
   const [selected, setSelected] = useState([])
+  const [status, setStatus] = useState(null)
 
   const toggle = (product) => {
     setSelected((prev) =>
@@ -20,10 +21,49 @@ export default function LeadForm() {
     )
   }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+
+    const formData = new FormData(e.target)
+    formData.set('interested_in', selected.join(', ') || 'None selected')
+
+    try {
+      const res = await fetch('https://formspree.io/f/mwvrrzrj', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+
+      if (res.ok) {
+        setStatus('success')
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') return (
+    <div style={{ textAlign: 'center', padding: '40px 16px' }}>
+      <div style={{ fontSize: 52, marginBottom: 14 }}>🕊</div>
+      <h3 style={{ color: '#D4AF37', fontFamily: 'Cormorant Garamond, serif', fontSize: 26, marginBottom: 10, fontWeight: 700 }}>
+        I Received Your Information.
+      </h3>
+      <p style={{ color: 'rgba(249,247,242,0.72)', fontSize: 15, lineHeight: 1.9 }}>
+        I will personally reach out to you within 24 hours.<br />
+        Thank you for trusting me with something this important.
+      </p>
+      <p style={{ color: 'rgba(249,247,242,0.35)', fontSize: 11, marginTop: 16, fontFamily: 'DM Mono, monospace' }}>
+        — Rev. Valentine Saint Martin
+      </p>
+    </div>
+  )
+
   return (
-    <form action="https://formspree.io/f/mwvrrzrj" method="POST">
+    <form onSubmit={handleSubmit}>
       <input type="hidden" name="source" value="healthcare-by-valentine" />
-      <input type="hidden" name="interested_in" value={selected.join(', ')} />
 
       <label className="f-label">Your Full Name *</label>
       <input className="f-input" name="name" placeholder="First and Last Name" required />
@@ -103,30 +143,4 @@ export default function LeadForm() {
               flexShrink: 0,
               transition: 'all 0.2s',
             }}>
-              {selected.includes(product) && (
-                <span style={{ color: '#D4AF37', fontSize: 10, lineHeight: 1 }}>✓</span>
-              )}
-            </div>
-            {product}
-          </label>
-        ))}
-      </div>
-
-      <label className="f-label">Anything I Should Know?</label>
-      <input className="f-input" name="notes" placeholder="Current coverage, health conditions, questions..." />
-
-      <button
-        type="submit"
-        className="btn-primary"
-        style={{ width: '100%', justifyContent: 'center', marginTop: 4, padding: '16px 0', fontSize: 10 }}
-      >
-        ✝ GET MY FREE FORENSIC AUDIT
-      </button>
-
-      <p style={{ color: 'rgba(249,247,242,0.28)', fontSize: 8.5, textAlign: 'center', marginTop: 10, fontFamily: 'DM Mono, monospace', letterSpacing: 1 }}>
-        NO OBLIGATION · I NEVER SELL YOUR DATA · NY § 2119
-      </p>
-
-    </form>
-  )
-}
+              {selected.in
