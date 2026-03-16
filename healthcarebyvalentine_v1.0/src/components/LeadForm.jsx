@@ -1,9 +1,9 @@
 import React from 'react'
-import { BOROUGHS, AGE_RANGES, COVERAGE_AMOUNTS } from '../constants'
+import { BOROUGHS, PROFESSIONS } from '../constants'
 
 export default function LeadForm() {
   return (
-    <form action="https://formspree.io/f/meerrvpe" method="POST">
+    <form action="https://formspree.io/f/mwvrrzrj" method="POST">
       <input type="hidden" name="source" value="healthcare-by-valentine" />
 
       <label className="f-label">Your Full Name *</label>
@@ -21,23 +21,11 @@ export default function LeadForm() {
       </div>
       <div style={{ marginBottom: 12 }} />
 
-      <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-        <div>
-          <label className="f-label">Age Range *</label>
-          <select className="f-input" style={{ marginBottom: 0 }} name="age" required>
-            <option value="">Select Age</option>
-            {AGE_RANGES.map((a) => <option key={a} value={a}>{a}</option>)}
-          </select>
-        </div>
-        <div>
-          <label className="f-label">Coverage Amount *</label>
-          <select className="f-input" style={{ marginBottom: 0 }} name="coverage" required>
-            <option value="">Select Amount</option>
-            {COVERAGE_AMOUNTS.map((c) => <option key={c} value={c}>{c}</option>)}
-          </select>
-        </div>
-      </div>
-      <div style={{ marginBottom: 12 }} />
+      <label className="f-label">Your Profession *</label>
+      <select className="f-input" name="profession" required>
+        <option value="">Select Profession</option>
+        {PROFESSIONS.map((p) => <option key={p} value={p}>{p}</option>)}
+      </select>
 
       <label className="f-label">Borough *</label>
       <select className="f-input" name="borough" required>
@@ -48,20 +36,20 @@ export default function LeadForm() {
       <label className="f-label">Coverage Is For</label>
       <select className="f-input" name="forSelf" defaultValue="Myself">
         <option value="Myself">Myself</option>
-        <option value="My Parent">My Parent</option>
-        <option value="My Spouse">My Spouse</option>
-        <option value="Other Family Member">Other Family Member</option>
+        <option value="My Business">My Business</option>
+        <option value="My Employees">My Employees</option>
+        <option value="My Family">My Family</option>
       </select>
 
       <label className="f-label">Anything I Should Know?</label>
-      <input className="f-input" name="notes" placeholder="Health conditions, previous denials, questions..." />
+      <input className="f-input" name="notes" placeholder="Current coverage, health conditions, questions..." />
 
       <button
         type="submit"
         className="btn-primary"
         style={{ width: '100%', justifyContent: 'center', marginTop: 4, padding: '16px 0', fontSize: 10 }}
       >
-        ✝ GET MY FREE COVERAGE QUOTE
+        ✝ GET MY FREE FORENSIC AUDIT
       </button>
 
       <p style={{ color: 'rgba(249,247,242,0.28)', fontSize: 8.5, textAlign: 'center', marginTop: 10, fontFamily: 'DM Mono, monospace', letterSpacing: 1 }}>
