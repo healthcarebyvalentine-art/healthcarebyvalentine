@@ -22,7 +22,7 @@ export default function About() {
               I've spent 20 years mastering the intersection of healthcare administration, insurance carrier logic, and fiduciary responsibility. I built my practice on one principle: the people who protect this city deserve someone protecting them.
             </p>
             <p className="body-text" style={{ marginBottom: 18 }}>
-              I am a <span style={{ color: '#D4AF37', fontWeight: 600 }}>Solo Fiduciary</span> — FBI fingerprinted, NY licensed. I personally analyze your situation, personally identify your vulnerabilities, and personally architect your permanent wealth structure. I don't hand you off. I don't delegate. Every client gets me.
+              I am a <span style={{ color: '#D4AF37', fontWeight: 600 }}>Solo Fiduciary</span> — FBI fingerprinted, NY licensed. I personally assess your situation, source the right policy from top-rated carriers, and guide you through every step. I don't hand you off. I don't delegate. Every client gets me.
             </p>
             <p className="body-text" style={{ marginBottom: 32 }}>
               My forensic back-end analysis goes deeper than any standard policy review. I know how carriers think, where they hide exclusions, and exactly which gaps will cause a denial at the worst possible moment. I plug those gaps — permanently.
